@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "983304295862",
+    "project_id": "budget-pal-843f5",
+    "storage_bucket": "budget-pal-843f5.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:983304295862:android:0beef77c2ca22ddb8b9d17",
+        "android_client_info": {
+          "package_name": "com.example.budget_pal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "983304295862-5dj7heeafg65assg5uf5ga2fu2aufqok.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD_qJ8Zuu5KaqQkvt1bm_t85gGtfvnGVjQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "983304295862-5dj7heeafg65assg5uf5ga2fu2aufqok.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "983304295862-11bar4odfqds89o0k0q4ch18iqli6pm4.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.budgetPal"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
