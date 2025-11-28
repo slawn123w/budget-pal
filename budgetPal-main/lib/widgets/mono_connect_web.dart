@@ -5,8 +5,8 @@ import 'dart:html' as html;
 import 'dart:convert';
 import 'dart:js_interop';
 
-@JS()
-external get platformViewRegistry;
+@JS('platformViewRegistry')
+external JSObject get platformViewRegistry;
 
 typedef MonoCodeCallback = void Function(String code);
 
@@ -61,19 +61,18 @@ class _MonoConnectWebDialogState extends State<MonoConnectWebDialog> {
   Widget build(BuildContext context) {
     // Register a view type for the iframe (web only)
     if (kIsWeb) {
-      platformViewRegistry.callMethod('registerViewFactory', [
-        'mono-connect-iframe',
-        (int viewId) {
-          final element =
-              html.IFrameElement()
-                ..src = widget.url
-                ..style.border = 'none'
-                ..width = '100%'
-                ..height = '100%'
-                ..allow = 'clipboard-read; clipboard-write';
-          return element;
-        }.toJS,
-      ]);
+      // Cast platformViewRegistry to dynamic to access registerViewFactory
+      final registry = platformViewRegistry as dynamic;
+      registry.registerViewFactory('mono-connect-iframe', (int viewId) {
+        final element =
+            html.IFrameElement()
+              ..src = widget.url
+              ..style.border = 'none'
+              ..width = '100%'
+              ..height = '100%'
+              ..allow = 'clipboard-read; clipboard-write';
+        return element;
+      });
     }
     return Dialog(
       insetPadding: const EdgeInsets.all(16),
